@@ -3,7 +3,7 @@ import datetime
 
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.dialects.postgresql import insert
-from sqlalchemy import Column, String, Integer, BigInteger, LargeBinary, orm, and_, select
+from sqlalchemy import Column, String, Integer, BigInteger, DateTime, LargeBinary, orm, and_, select
 import sqlalchemy as sql
 
 from telethon.sessions.memory import MemorySession, _SentFileType
@@ -111,7 +111,7 @@ class AlchemySessionContainer:
             entity_id = Column(BigInteger, primary_key=True)
             pts = Column(BigInteger)
             qts = Column(BigInteger)
-            date = Column(BigInteger)
+            date = Column(DateTime)
             seq = Column(BigInteger)
             unread_count = Column(Integer)
 
